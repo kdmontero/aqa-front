@@ -2,7 +2,7 @@ import { useState } from "react"
 
 const Home = () => {
 
-  const [quotations, setQuotations] = useState([
+  const [quotations, setQuotations] = useState<{id: number, name: string}[]>([
     {
       id: 10,
       name: "0x"
@@ -36,13 +36,12 @@ const Home = () => {
       <div>
         {quotations.map((element, idx)=>{
           return (
-            <div className="space-x-2">
+            <div key={element.id} className="space-x-2">
               <span>{idx}:</span>
               <span>{element.id}</span>
-              <span>{element.name}</span>
               <span>
                 <input
-                  value={element.id}
+                  className="border"
                 />
               </span>
               <span>
