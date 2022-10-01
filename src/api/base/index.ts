@@ -2,7 +2,7 @@ import axios from "axios";
 
 const buildUrl = (url: string) => process.env.REACT_APP_API_ROOT + url
 const _getAccessToken = () => localStorage.getItem('accessToken')
-const _getAuthorization = () => `Bearer ${_getAccessToken}`
+const _getAuthorization = () => `JWT ${_getAccessToken}`
 
 export const PrivateAPI = {
   get: (url: string, query?: Record<string, any>) => {
