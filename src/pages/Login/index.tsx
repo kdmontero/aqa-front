@@ -36,17 +36,18 @@ const Login = () => {
     console.log("password", password)
     setLoading(true)
     setTimeout(()=>{
-      axios({
-        method: "post",
-        url: "http://localhost:8000/api/token/",
-        data: {
-          username: email,
-          password: password
-        }
-      })
+      // axios({
+      //   method: "post",
+      //   url: "http://localhost:8000/api/token/",
+      //   data: {
+      //     username: email,
+      //     password: password
+      //   }
+      // })
+      login({username: email, password: password})
       .then(responseNiBackend=>{
         console.log(responseNiBackend.data)
-        localStorage.setItem("aqaAccessToken", responseNiBackend.data.access)
+        localStorage.setItem("accessToken", responseNiBackend.data.access)
       })
       .catch(error=>{
         console.log("error", error.response)
