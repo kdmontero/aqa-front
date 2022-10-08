@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 
-import { Home, Login } from "../pages"
+import { Home, Login, Quotations } from "../pages"
 
 const ProjectRoutes = () => {
   return (
@@ -8,9 +8,14 @@ const ProjectRoutes = () => {
       <Route
         path="/"
         element={<Home />}
-      >
+      />
 
-      </Route>
+      <Route
+        path="/quotations"
+        element={<Quotations />}
+      />
+
+
       <Route
         path="/login"
         element={<Login />}
