@@ -7,9 +7,9 @@ const ProjectRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route path="/quotations" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/login" element={<Quotations />} />
+        <Route path="/quotations" element={<Quotations />} />
       </Route>
     </Routes>
   )
