@@ -1,36 +1,16 @@
 import { Route, Routes } from "react-router-dom"
 
 import { Home, Login, Quotations } from "../pages"
-import { Navbar } from "../components"
+import MainLayout from "../layout/MainLayout"
 
 const ProjectRoutes = () => {
-  const completePage = (page: JSX.Element) => {
-    return(
-      <div>
-        <Navbar/>
-        {page}
-      </div>
-    )
-  }
-
   return (
     <Routes>
-      <Route
-        path="/"
-        element={completePage(<Home />)}
-      />
-
-      <Route
-        path="/quotations"
-
-        element={completePage(<Quotations />)}
-      />
-
-
-      <Route
-        path="/login"
-        element={completePage(<Login />)}
-      />
+      <Route path="/" element={<MainLayout />}>
+        <Route path="/quotations" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Quotations />} />
+      </Route>
     </Routes>
   )
 }
