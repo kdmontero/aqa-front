@@ -7,3 +7,6 @@ const getAllQuotations = () => {
 const getQuotationById = (id: number) => {
   return PrivateAPI.get(`api/quotations/${id}/`)
 }
+
+
+export { getAllQuotations, getQuotationById }
